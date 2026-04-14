@@ -1,0 +1,39 @@
+<!-- File: employee-form.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thêm nhân viên</title>
+</head>
+<body>
+
+<h2>Thêm nhân viên</h2>
+
+<form th:action="@{/hr/add-employee}" th:object="${employee}" method="post">
+
+    <!-- AGE -->
+    <div>
+        <label>Tuổi:</label>
+        <input type="number" th:field="*{age}" />
+
+        <!-- Hiển thị lỗi -->
+        <p th:if="${#fields.hasErrors('age')}"
+           th:errors="*{age}"
+           style="color:red"></p>
+    </div>
+
+    <!-- EMAIL -->
+    <div>
+        <label>Email:</label>
+        <input type="text" th:field="*{email}" />
+
+        <p th:if="${#fields.hasErrors('email')}"
+           th:errors="*{email}"
+           style="color:red"></p>
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
