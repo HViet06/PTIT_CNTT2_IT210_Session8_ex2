@@ -10,7 +10,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.example.demo")
+@ComponentScan(basePackages = "com.example.bai2")
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean
